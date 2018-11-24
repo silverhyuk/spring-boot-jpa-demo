@@ -2,8 +2,10 @@ package me.silverhyuk.springbootjpademo.post;
 
 import java.util.List;
 
-public interface PostCustomRepository {
+public interface PostCustomRepository<T> {
 
     List<Post> findByPost();
+
+    void delete(T entity);
 
 }

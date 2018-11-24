@@ -17,9 +17,11 @@ public class PostRepositoryTest {
     @Test
     public void crud() {
         Post post = new Post();
-        post.setTitle("my title");
+        post.setTitle("hibernate");
         post.setContent("hi, my name is choieunhyuk");
         postRepository.save(post); //JpaRepository
         postRepository.findByPost(); //PostCustomRepository
+        postRepository.delete(post); //PostCustomRepository
+        postRepository.flush();
     }
 }
