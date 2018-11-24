@@ -22,6 +22,6 @@ public class PostRepositoryTest {
         postRepository.save(post); //JpaRepository
         postRepository.findByPost(); //PostCustomRepository
         postRepository.delete(post); //PostCustomRepository
-        postRepository.flush();
+        postRepository.flush(); // transaction 처리때문에 delete 쿼리가 rollback 되기 때문에 delete 가 실행되지 않음 > 강제로 처리
     }
 }
